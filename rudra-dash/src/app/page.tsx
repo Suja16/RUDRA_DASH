@@ -1,12 +1,14 @@
 "use client";
 import PersistentDrawerLeft from "./sidenav";
-import bgcard from "./cards";
+import Graphic from "./blue_bg";
 export default function Page() {
   return (
     <>
-      <h1>Hello, Next.js!</h1>
+    <div className="flex items-center">
       <PersistentDrawerLeft/>
+      <Graphic/>
       
+    </div>
     </>
   )
 }
