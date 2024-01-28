@@ -1,5 +1,7 @@
 import { Typography } from "@mui/material";
 import CardExample from "./cards";
+import React from "react";
+import { margin } from "@mui/system";
 
 const Graphic = () => {
   const customBgStyle = {
@@ -9,8 +11,8 @@ const Graphic = () => {
     height: "9rem",
     borderRadius: "1.5rem",
     color: "white",
-    width:"73.4rem",
-    marginLeft:"-2rem",
+    width:"100%",
+    
   };
 
   const buttonStyle = {
@@ -36,12 +38,12 @@ const Graphic = () => {
   };
 
   const containerStyle = {
-    width: "83.33vw", // 10/12 as a percentage of the viewport width
-    margin: "-3rem 2rem 2rem 2rem",
+    width: "100%", 
+    margin: "-3rem 0rem 0rem  0rem",
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} >
       <div style={customBgStyle}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <Typography variant="h5">Hello</Typography>
@@ -57,7 +59,7 @@ const Graphic = () => {
           We are on a mission to help developers like you to build beautiful projects for FREE.
         </Typography>
       </div>
-      <div style={{ margin: '-3rem 2rem 2rem 2rem' }}>
+      <div style={{ margin: '-3rem 2rem 0rem 2rem' }}>
         <CardExample />
       </div>
     </div>

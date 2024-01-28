@@ -18,6 +18,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
 import InputBase from '@mui/material/InputBase'
 import SearchIcon from '@mui/icons-material/Search'
+import Graphic from './blue_bg'
 
 const drawerWidth = 240
 
@@ -39,6 +40,16 @@ const Main = styled('main', {
     marginLeft: 0,
   }),
 }))
+const GlobalStyles = styled('div')(({ theme }) => ({
+  '*::-webkit-scrollbar': {
+    width: '0.4em',
+  },
+  '*::-webkit-scrollbar-thumb': {
+    backgroundColor: theme.palette.background.default,
+    outline: '1px solid slategrey',
+  },
+  overflow: 'hidden',  // Hide the scrollbar
+}));
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -79,9 +90,10 @@ export default function PersistentDrawerLeft() {
   }
 
   return (
+    <GlobalStyles>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} className='bg-white'>
+      <AppBar position="fixed" open={open} style={{background:'white'}}>
         <Toolbar>
           <IconButton
             color="primary"
@@ -90,22 +102,35 @@ export default function PersistentDrawerLeft() {
             edge="start"
             sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
-            <MenuIcon />
+            <MenuIcon />  
           </IconButton>
-          <div className='flex w-full justify-between items-center'>
-          <div className="relative ">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', inset: '0 0 0 0', left: '0', display: 'flex', alignItems: 'center', paddingLeft: '0.75rem', pointerEvents: 'none' }}>
+              <svg style={{ width: '1.25rem', height: '1.25rem', color: '#718096' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
               </svg>
             </div>
             <input
               type="text"
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white text-black shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              style={{
+                paddingTop: '0.5rem',
+                paddingBottom: '0.5rem',
+                paddingRight: '0.75rem',
+                paddingLeft: '2.5rem',
+                borderRadius: '0.375rem',
+                borderWidth: '1px',
+                borderColor: '#D1D5DB',
+                width: '100%',
+                lineHeight: '1.25rem',
+                color: '#000000',
+                backgroundColor: '#ffffff',
+                boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+              }}
               placeholder="Search..."
             />
           </div>
-                <div className='flex gap-4 items-center'>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                     <img src="/icons/Ellipse 176.svg" alt="eng" />
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M19.7695 11.6453C19.039 10.7923 18.7071 10.0531 18.7071 8.79716V8.37013C18.7071 6.73354 18.3304 5.67907 17.5115 4.62459C16.2493 2.98699 14.1244 2 12.0442 2H11.9558C9.91935 2 7.86106 2.94167 6.577 4.5128C5.71333 5.58842 5.29293 6.68822 5.29293 8.37013V8.79716C5.29293 10.0531 4.98284 10.7923 4.23049 11.6453C3.67691 12.2738 3.5 13.0815 3.5 13.9557C3.5 14.8309 3.78723 15.6598 4.36367 16.3336C5.11602 17.1413 6.17846 17.6569 7.26375 17.7466C8.83505 17.9258 10.4063 17.9933 12.0005 17.9933C13.5937 17.9933 15.165 17.8805 16.7372 17.7466C17.8215 17.6569 18.884 17.1413 19.6363 16.3336C20.2118 15.6598 20.5 14.8309 20.5 13.9557C20.5 13.0815 20.3231 12.2738 19.7695 11.6453Z" fill="#8A92A6"/>
@@ -116,8 +141,8 @@ export default function PersistentDrawerLeft() {
                         <path d="M21.4761 5.67351C20.6101 4.04151 18.9061 2.99951 17.0301 2.99951H7.05013C5.17413 2.99951 3.47013 4.04151 2.60413 5.67351C2.41013 6.03851 2.50213 6.49351 2.82513 6.75151L10.2501 12.6905C10.7701 13.1105 11.4001 13.3195 12.0301 13.3195C12.0341 13.3195 12.0371 13.3195 12.0401 13.3195C12.0431 13.3195 12.0471 13.3195 12.0501 13.3195C12.6801 13.3195 13.3101 13.1105 13.8301 12.6905L21.2551 6.75151C21.5781 6.49351 21.6701 6.03851 21.4761 5.67351Z" fill="#8A92A6"/>
                     </svg>
                     <img src="/icons/Bearedguy.png" alt="beared guy" />
-                    <div className='flex flex-col'>
-                    <Typography variant="h6" style={{ color: 'black' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <Typography variant="h6" style={{ color: 'black', fontSize:'1rem' }}>
                     Austin Robertson
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -141,13 +166,13 @@ export default function PersistentDrawerLeft() {
         open={open}
       >
         <DrawerHeader>
-          <div className="flex items-center  ">
-            <img src="/icons/nav_icon.png" alt="nav_icon" className="h-5 w-5" />
-            <Typography variant="h5" className="ml-2">
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/icons/nav_icon.png" alt="nav_icon" style={{ height: '1.25rem', width: '1.25rem' }} />
+            <Typography variant="h5" style={{ marginLeft: '0.5rem' }}>
               Hope Ui
             </Typography>
             <IconButton onClick={handleDrawerClose} >
-              <div className="bg-blue-500 p-2 rounded-full ml-10 ">
+              <div style={{ backgroundColor: '#3b82f6', padding: '0.5rem', borderRadius: '9999px', marginLeft: '2.5rem' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3.1875 9.20532L14.4375 9.20532" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M7.72485 13.7238L3.18735 9.20576L7.72485 4.68701" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -159,7 +184,7 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           <ListItemButton>
-            <ListItemText primary="Home" className="text-gray-500" />
+            <ListItemText primary="Home" style={{ color: '#6b7280' }} />
           </ListItemButton>
           <ListItemButton>
             <ListItemText primary="Dashboard" />
@@ -169,7 +194,7 @@ export default function PersistentDrawerLeft() {
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <ListItemText primary="Pages" className="text-gray-500" />
+            <ListItemText primary="Pages" style={{ color: '#6b7280' }} />
           </ListItemButton>
           <ListItemButton>
             <ListItemText primary="Example" />
@@ -197,7 +222,7 @@ export default function PersistentDrawerLeft() {
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <ListItemText primary="Elements" className="text-gray-500" />
+            <ListItemText primary="Elements" style={{ color: '#6b7280' }} />
           </ListItemButton>
           <ListItemButton>
             <ListItemText primary="Components" />
@@ -213,6 +238,10 @@ export default function PersistentDrawerLeft() {
           </ListItemButton>
         </List>
       </Drawer>
+      <Main open={open}>
+        <Graphic/>
+      </Main>
     </Box>
+    </GlobalStyles>
   )
 }

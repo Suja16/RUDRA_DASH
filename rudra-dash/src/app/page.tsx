@@ -6,8 +6,6 @@ export default function Page() {
     <>
     <div className="flex items-center">
       <PersistentDrawerLeft/>
-      <Graphic/>
-      
     </div>
     </>
   )
