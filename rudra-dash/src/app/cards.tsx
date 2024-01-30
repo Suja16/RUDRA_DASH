@@ -9,6 +9,19 @@ import {
 } from "@mui/material";
 import { display } from "@mui/system";
 import StandardImageList from "./lastrow";
+import { gql, useQuery } from "@apollo/client";
+import client from "../../lib/apollo-client";
+
+
+const  GET_DATA = gql`
+    query MyQuery {
+      netflix_shows {
+        title
+        release_year
+        rating
+      }
+    }
+`;
 
 const cardStyle = {
   display: "flex",
@@ -34,7 +47,16 @@ const buttonStyle = {
   width: "100%",
 };
 
+
+
 const CardExample = () => {
+  const { loading, error, data } = useQuery(GET_DATA,{
+    client,
+  });
+  if(loading) return <p>Loading...</p>;
+  if(error) return <p>Error : {error.message}(</p>;
+  
+  const netflixShows = data.netflix_shows;
   return (
     <Grid
       container
@@ -150,24 +172,24 @@ const CardExample = () => {
         </Card>
       </Grid>
       <Grid item xs={12} sm={4}>
-        <Card>
-          <CardContent>
-            <Typography variant="h6" component="div">
-              Upcoming Birthday
-            </Typography>
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-              <img
-                src="/icons/review_items.svg"
-                alt="tech-pic"
-                style={{ width: "4rem" }}
-              />
-              <Typography variant="body2" color="text.secondary">
-                Trainer Expert
-              </Typography>
+  <Card>
+          <CardContent style={{ ...cardStyle,padding:'0.3rem' }}>
+            <h3>Netflix-Show</h3>
+            <div style={{overflowY:'auto',overflowX:'hidden',fontSize:'0.7rem'}}>
+              {netflixShows.map((show, index) => (
+                <div key={index}  style={{display:"flex",justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+                  <h3>{show.title}</h3>
+                  <div style={{ display: 'flex', gap: '1rem' }}>
+                    <p>{show.release_year}</p>
+                    <p>{show.rating}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
       </Grid>
+
       <Grid item xs={12} sm={4}>
         <Card>
           <CardContent>
