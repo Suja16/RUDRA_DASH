@@ -54,7 +54,7 @@ const CardExample = () => {
     client,
   });
   if(loading) return <p>Loading...</p>;
-  if(error) return <p>Error : {error.message}(</p>;
+  if(error) return <p>Error : {error.message}</p>;
   
   const netflixShows = data.netflix_shows;
   return (
@@ -159,13 +159,14 @@ const CardExample = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
                   ipsum dolor sit amet
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <ul>
+                <ul>
+                 <Typography variant="body2" color="text.secondary">
+
                     <li>Agens Reppligers</li>
                     <li>Managements</li>
                     <li>Creative Sprint</li>
-                  </ul>
-                </Typography>
+                  </Typography>
+                </ul>
               </div>
             </div>
           </CardContent>
@@ -331,7 +332,7 @@ const CardExample = () => {
                   viewBox="0 0 32 32"
                   fill="none"
                 >
-                  <g clip-path="url(#clip0_1_224)">
+                  <g clipPath="url(#clip0_1_224)">
                     <rect width="32" height="32" fill="white" />
                     <path
                       d="M16 32C24.8387 32 32 24.8387 32 16C32 7.16133 24.8387 0 16 0C7.16133 0 0 7.16133 0 16C0 24.8387 7.16133 32 16 32ZM7.32133 15.6533L22.748 9.70533C23.464 9.44667 24.0893 9.88 23.8573 10.9627L23.8587 10.9613L21.232 23.336C21.0373 24.2133 20.516 24.4267 19.7867 24.0133L15.7867 21.0653L13.8573 22.924C13.644 23.1373 13.464 23.3173 13.0507 23.3173L13.3347 19.2467L20.748 12.5493C21.0707 12.2653 20.676 12.1053 20.2507 12.388L11.0893 18.156L7.14 16.924C6.28267 16.652 6.264 16.0667 7.32133 15.6533Z"
@@ -516,7 +517,7 @@ const CardExample = () => {
                   viewBox="0 0 32 32"
                   fill="none"
                 >
-                  <g clip-path="url(#clip0_1_224)">
+                  <g clipPath="url(#clip0_1_224)">
                     <rect width="32" height="32" fill="white" />
                     <path
                       d="M16 32C24.8387 32 32 24.8387 32 16C32 7.16133 24.8387 0 16 0C7.16133 0 0 7.16133 0 16C0 24.8387 7.16133 32 16 32ZM7.32133 15.6533L22.748 9.70533C23.464 9.44667 24.0893 9.88 23.8573 10.9627L23.8587 10.9613L21.232 23.336C21.0373 24.2133 20.516 24.4267 19.7867 24.0133L15.7867 21.0653L13.8573 22.924C13.644 23.1373 13.464 23.3173 13.0507 23.3173L13.3347 19.2467L20.748 12.5493C21.0707 12.2653 20.676 12.1053 20.2507 12.388L11.0893 18.156L7.14 16.924C6.28267 16.652 6.264 16.0667 7.32133 15.6533Z"
@@ -555,10 +556,10 @@ const CardExample = () => {
               </Typography>
               </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16384 12.8936C5.83933 12.8936 3 13.4017 3 15.4376C3 17.4735 5.82203 18 9.16384 18C12.4892 18 15.3277 17.491 15.3277 15.456C15.3277 13.4209 12.5065 12.8936 9.16384 12.8936Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1637 9.98981C11.3457 9.98981 13.1144 8.20137 13.1144 5.99491C13.1144 3.78844 11.3457 2 9.1637 2C6.98253 2 5.21389 3.78844 5.21389 5.99491C5.20611 8.1935 6.96177 9.98194 9.13689 9.98981H9.1637Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M17.2308 7.17676V10.6837" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M18.9997 8.92946H15.4624" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M9.16384 12.8936C5.83933 12.8936 3 13.4017 3 15.4376C3 17.4735 5.82203 18 9.16384 18C12.4892 18 15.3277 17.491 15.3277 15.456C15.3277 13.4209 12.5065 12.8936 9.16384 12.8936Z" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path fillRule="evenodd" clipRule="evenodd" d="M9.1637 9.98981C11.3457 9.98981 13.1144 8.20137 13.1144 5.99491C13.1144 3.78844 11.3457 2 9.1637 2C6.98253 2 5.21389 3.78844 5.21389 5.99491C5.20611 8.1935 6.96177 9.98194 9.13689 9.98981H9.1637Z" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M17.2308 7.17676V10.6837" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M18.9997 8.92946H15.4624" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
             </div>
           </CardContent>

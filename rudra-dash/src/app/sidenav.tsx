@@ -108,7 +108,7 @@ export default function PersistentDrawerLeft() {
           <div style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', inset: '0 0 0 0', left: '0', display: 'flex', alignItems: 'center', paddingLeft: '0.75rem', pointerEvents: 'none' }}>
               <svg style={{ width: '1.25rem', height: '1.25rem', color: '#718096' }} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path>
               </svg>
             </div>
             <input
@@ -174,8 +174,8 @@ export default function PersistentDrawerLeft() {
             <IconButton onClick={handleDrawerClose} >
               <div style={{ backgroundColor: '#3b82f6', padding: '0.5rem', borderRadius: '9999px', marginLeft: '2.5rem' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M3.1875 9.20532L14.4375 9.20532" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M7.72485 13.7238L3.18735 9.20576L7.72485 4.68701" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M3.1875 9.20532L14.4375 9.20532" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M7.72485 13.7238L3.18735 9.20576L7.72485 4.68701" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </IconButton>
