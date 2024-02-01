@@ -11,11 +11,12 @@ import { display } from "@mui/system";
 import StandardImageList from "./lastrow";
 import { gql, useQuery } from "@apollo/client";
 import client from "../../lib/apollo-client";
+import { Waypoint } from 'react-waypoint';
 
 
-const  GET_DATA = gql`
-    query MyQuery {
-      netflix_shows {
+const GET_DATA = gql`
+    query MyQuery($limit: Int, $offset: Int) {
+      netflix_shows(limit: $limit, offset: $offset) {
         title
         release_year
         rating
